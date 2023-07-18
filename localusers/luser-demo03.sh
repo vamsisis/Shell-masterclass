@@ -6,8 +6,8 @@
 # Display the UID.
 echo "Your UID is ${UID}"
 
-# Only display if the UID does NOT match 1000.
-UID_TO_TEST_FOR='1000'
+# Only display if the UID does NOT match 1004.
+UID_TO_TEST_FOR='1004'
 if [[ "${UID}" -ne "${UID_TO_TEST_FOR}" ]]
 then
   echo "Your UID does not match ${UID_TO_TEST_FOR}."
