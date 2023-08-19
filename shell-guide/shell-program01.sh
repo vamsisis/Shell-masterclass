@@ -11,16 +11,83 @@
 
 FILE=~/.bashrc
 
-if [[ -e $FILE ]]
+if [[ -e "$FILE" ]]
 then
-  if [[ -f $FILE ]]
+  if [[ -f "$FILE" ]]
   then
-    echo "$FILE is regular file"
-  fi 
+    echo "$FILE is a regular file"
+  fi
+
+  if [[ -d "$FILE" ]]
+  then
+    echo "$FILE is a  directory"
+  fi
+
+  if [[ -r "$FILE" ]]
+  then
+    echo "$FILE is readable"
+  fi
+
+  if [[ -w "$FILE" ]]
+  then
+    echo "$FILE is writable"
+  fi
+
+  if [[ -x "$FILE" ]]
+  then
+    echo "$FILE is executable/writable"
+  fi
+
+
+
 else
-  echo "$FILE doesn't exist"
+  echo "$FILE not found"
   exit 1
-
 fi
+exit 0 
 
-exit 0
+
+# ############################### Replacing exit status with an integer argument to the return command ####################################
+# ############################### Converting the previous script to a shell function to include it int larget program #####################
+
+# test_file () {
+
+# FILE=~/.bashrc
+
+# if [[ -e "$FILE" ]]
+# then
+#   if [[ -f "$FILE" ]]
+#   then
+#     echo "$FILE is a regular file"
+#   fi
+
+#   if [[ -d "$FILE" ]]
+#   then
+#     echo "$FILE is a  directory"
+#   fi
+
+#   if [[ -r "$FILE" ]]
+#   then
+#     echo "$FILE is readable"
+#   fi
+
+#   if [[ -w "$FILE" ]]
+#   then
+#     echo "$FILE is writable"
+#   fi
+
+#   if [[ -x "$FILE" ]]
+#   then
+#     echo "$FILE is executable/writable"
+#   fi
+
+
+
+# else
+#   echo "$FILE not found"
+#   return 1
+# fi
+
+
+
+# }
